@@ -1,3 +1,3 @@
-# mike-ayumu.github.io
+# GitHubPages
 
-https://mike-ayumu.github.io/
+[GitHubPages](https://mike-ayumu.github.io/)
