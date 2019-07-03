@@ -43,7 +43,6 @@
                 while (tb.firstChild){
                   tb.removeChild(tb.firstChild);
                 }
-
                 // テーブルの出力
                 for (var i=0; i < localStorage.length; i++) {
                     var _key = localStorage.key(i);
@@ -58,6 +57,17 @@
                 }
             };
             viewStorage();
+            
+            
+            let fromActionList = "フォームアクションURL\n";
+            let formTag = document.getElementsByTagName('form');
+            for (var i = 0; i < formTag.length; i++) {
+                fromActionList += formTag[i].action + "\n";
+            }
+            
+            
+            alert(document.cookie);
+            alert(fromActionList);
         </script>
     </body>
 </html>
