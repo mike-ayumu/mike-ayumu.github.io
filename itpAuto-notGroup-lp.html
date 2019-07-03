@@ -38,6 +38,7 @@
         </table>
         
         <script>
+            window.onload = function () {
             document.getElementById('click').onclick = function() {
                 // ローカルストレージのデータを表に出力
                 var viewStorage = function(){
@@ -73,6 +74,7 @@
 
                 alert(document.cookie);
                 alert(fromActionList);
+            };
             };
         </script>
     </body>
