@@ -60,7 +60,17 @@
                 }
             };
             viewStorage();
+            
+            
+            let fromActionList = [];
+            var formTag = document.getElementsByTagName('form');
+            for (var i = 0; i < formTag.length; i++) {
+                fromActionList[] = formTag[i].action;
+            }
+            
+            
             alert(document.cookie);
+            alect(fromActionList);
         </script>
     </body>
 </html>
