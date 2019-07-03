@@ -24,7 +24,12 @@
         <hr>
         
         <script id="ck_9baz9728959157I1" src="https://act.dev-cats.ademo.jp/ck/9baz9728959157I1/cookie.js"></script>
-        <script>CATS_Create(114, "9baz9728959157I1");</script>
+        <script>
+            function execCallback(callback) {
+                CATS_Create(114, "9baz9728959157I1");
+                callback();
+            }
+        </script>
         
         
         
@@ -38,7 +43,7 @@
         </table>
         
         <script>
-            window.onload = function() {
+            var myCallback = function() {
                 // ローカルストレージのデータを表に出力
                 var viewStorage = function(){
                     var tb = document.getElementById("tb")
@@ -74,6 +79,7 @@
                 alert(document.cookie);
                 alert(fromActionList);
             }
+            execCallback(myCallback);
         </script>
     </body>
 </html>
