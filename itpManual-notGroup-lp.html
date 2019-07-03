@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>計測タグ利用(手動付与)（グループなし）</title>
+    </head>
+    <body>
+        <h1>ランディングページ</h2>
+        <h3>計測タグ利用(手動付与)（グループなし）</h3>
+        <a href="#">中間クリックへ</a>
+        
+        <hr>
+        
+        <a href="https://example.com">aタグ - パラメーターなし</a>
+        <a href="https://example.com" data-add-param="AFAD">aタグ - パラメーターあり</a>
+        
+        <form action="https://example.com" method="post">
+            <input type="submit" value="パラメーターなし">
+        </form>
+        <form action="https://example.com" method="post" data-add-param="AFAD">
+            <input type="submit" value="パラメーターあり">
+        </form>
+        
+    </body>
+</html>
