@@ -64,13 +64,13 @@
                 
                 
                 
-                let fromActionList = "フォームアクションURL\n";
+                let fromActionList = "";
                 let formTag = document.getElementsByTagName('form');
                 for (var i = 0; i < formTag.length; i++) {
                     fromActionList += formTag[i].action + "\n";
                 }
                 alert("クッキー\n" + document.cookie);
-                alert(fromActionList);
+                alert("フォームアクションURL\n" + fromActionList);
             };
         </script>
     </body>
