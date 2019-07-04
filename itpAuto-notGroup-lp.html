@@ -13,10 +13,14 @@
         <hr>
         
         <a href="https://example.com">aタグ - パラメーターなし</a>
+        <a href="https://example.com" data-add-c2d53562e22d12b0="AFAD">aタグ - パラメーターあり（uqIdが異なる）</a>
         <a href="https://example.com" data-add-9baz9728959157I1="AFAD">aタグ - パラメーターあり</a>
         
         <form action="https://example.com" method="post">
             <input type="submit" value="パラメーターなし">
+        </form>
+        <form action="https://example.com" method="post" data-add-c2d53562e22d12b0="AFAD">
+            <input type="submit" value="パラメーターあり（uqIdが異なる）">
         </form>
         <form action="https://example.com" method="post" data-add-9baz9728959157I1="AFAD">
             <input type="submit" value="パラメーターあり">
