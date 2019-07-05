@@ -33,6 +33,7 @@
         
         
         
+        <h3>ローカルストレージ確認</h3>
         <table>
           <tr>
             <th>キー</th>
@@ -42,7 +43,18 @@
           </tbody>
         </table>
         
+        <button type="button" class="btn btn-outline-danger" onclick="cookieDel();">クッキー削除</button>
+        <button type="button" class="btn btn-outline-danger" onclick="localStorageDel();">ローカルストレージ削除</button>
+        
         <script>
+            function cookieDel() {
+                C=document.cookie.split(';%20');for(d='.'+location.host;d;d=(''+d).substr(1).match(/\..*$/))for(sl=0;sl<2;++sl)for(p='/'+location.pathname;p;p=p.substring(0,p.lastIndexOf('/')))for(i%20in%20C)if(c=C[i]){document.cookie=c+';%20domain='+d.slice(sl)+';%20path='+p.slice(1)+'/'+';%20expires='+new%20Date((new%20Date).getTime()-1e11).toGMTString()}
+                alert('クッキーを削除しました。');
+            }
+            function localStorageDel() {
+                window.localStorage&&window.localStorage.clear()
+                alert('ローカルストレージを削除しました。');
+            }
             document.getElementById('click').onclick = function() {
                 // ローカルストレージのデータを表に出力
                 var viewStorage = function(){
@@ -69,15 +81,15 @@
                 
                 
                 
-                let fromActionList = "フォームアクションURL\n";
+                let fromActionList = "";
                 let formTag = document.getElementsByTagName('form');
                 for (var i = 0; i < formTag.length; i++) {
                     fromActionList += formTag[i].action + "\n";
                 }
 
 
-                alert(document.cookie);
-                alert(fromActionList);
+                alert("クッキー\n" + document.cookie);
+                alert("フォームアクションURL\n" + fromActionList);
             };
         </script>
     </body>
