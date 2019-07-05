@@ -40,7 +40,17 @@
           </tbody>
         </table>
         
+        <hr>
+        
+        <button type="button" class="btn btn-outline-danger" onclick="localStorageDel();">ローカルストレージ削除</button>
+        
+        </section>
+        
         <script>
+            function localStorageDel() {
+                window.localStorage&&window.localStorage.clear()
+                alert('ローカルストレージを削除しました。');
+            }
             document.getElementById('click').onclick = function() {
                 // ローカルストレージのデータを表に出力
                 var viewStorage = function(){
