@@ -68,10 +68,11 @@
         
         <script>
             function cookieDel() {
-                var cookies = document.cookie.split(";");
-                for (var i = 0; i < cookies.length; i++) {
-                  eraseCookie(cookies[i].split("=")[0]);
-                }
+                document.cookie.split(";").forEach(function(cookie) {
+                  var date = new Date();
+                  date.setDate(date.getDate() - 1);
+                  document.cookie = cookie.trim().replace(/=.*/, "=;expires=" + date.toUTCString() + "/");
+                });
                 alert('クッキーを削除しました。');
             }
             function localStorageDel() {
