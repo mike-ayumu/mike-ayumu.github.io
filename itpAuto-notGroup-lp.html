@@ -73,7 +73,6 @@
                   date.setDate(date.getDate() - 1);
                   document.cookie = cookie.trim().replace(/=.*/, "=;expires=" + date.toUTCString() + "/");
                 });
-                C=document.cookie.split(';%20');for(d='.'+location.host;d;d=(''+d).substr(1).match(/\..*$/))for(sl=0;sl<2;++sl)for(p='/'+location.pathname;p;p=p.substring(0,p.lastIndexOf('/')))for(i%20in%20C)if(c=C[i]){document.cookie=c+';%20domain='+d.slice(sl)+';%20path='+p.slice(1)+'/'+';%20expires='+new%20Date((new%20Date).getTime()-1e11).toGMTString()};
                 alert('クッキーを削除しました。');
             }
             function localStorageDel() {
