@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <title>計測タグ利用(自動付与)（グループなし）</title>
+    </head>
+    <body>
+        <section class="container">
+            
+        <h1 id="click">ランディングページ</h1>
+        <h3>計測タグ利用(自動付与)（グループなし）</h3>
+        <a href="https://act.dev-cats.ademo.jp/mcl/9baz9728959157I1/?mbid=5c1v11e0510D4Dad">中間クリックへ</a><br>
+        <a href="https://act.dev-cats.ademo.jp/mcl/9baz9728959157I1/?mbid=5c1v11e0510D4Dad&mpara1=auto">中間クリックへ（パラ）</a>
+        
+        <hr>
+        
+        <a href="https://example.com">aタグ - パラメーターなし</a><br>
+        <a href="https://example.com" data-add-c2d53562e22d12b0="AFAD">aタグ - パラメーターあり（uqIdが異なる）</a><br>
+        <a href="https://example.com" data-add-9baz9728959157I1="AFAD">aタグ - パラメーターあり</a>
+            
+        <br>
+        
+        <form action="https://example.com" method="post">
+            <input type="submit" value="パラメーターなし">
+        </form>
+        <form action="https://example.com" method="post" data-add-c2d53562e22d12b0="AFAD">
+            <input type="submit" value="パラメーターあり（uqIdが異なる）">
+        </form>
+        <form action="https://example.com" method="post" data-add-9baz9728959157I1="AFAD">
+            <input type="submit" value="パラメーターあり">
+        </form>
+        
+        <hr>
+        
+        <script>
+        (function(){
+        var a=document.createElement("script");
+        a.src="https://act.pro-cats.ademo.jp/ck/785Nb9Ecf17a3E71/cookie.js";
+        a.id="ck_785Nb9Ecf17a3E71"; 
+        a.addEventListener("load",function(){CATS_Create(30,"785Nb9Ecf17a3E71");});
+        document.body.appendChild(a);
+        })();
+        </script>
+        
+        
+        
+        <h3>ローカルストレージ確認</h3>
+        <table>
+          <tr>
+            <th>キー</th>
+            <th>値</th>
+          </tr>
+          <tbody id="tb">
+          </tbody>
+        </table>
+        
+        <hr>
+        
+        <button type="button" class="btn btn-outline-danger" onclick="cookieDel();">クッキー削除（消えない）</button>
+        <button type="button" class="btn btn-outline-danger" onclick="localStorageDel();">ローカルストレージ削除</button>
+        
+        </section>
+        
+        <script>
+            function cookieDel() {
+                document.cookie.split(";").forEach(function(cookie) {
+                  var date = new Date();
+                  date.setDate(date.getDate() - 1);
+                  document.cookie = cookie.trim().replace(/=.*/, "=;expires=" + date.toUTCString() + "/");
+                });
+                alert('クッキーを削除しました。');
+            }
+            function localStorageDel() {
+                window.localStorage&&window.localStorage.clear()
+                alert('ローカルストレージを削除しました。');
+            }
+            document.getElementById('click').onclick = function() {
+                // ローカルストレージのデータを表に出力
+                var viewStorage = function(){
+                    var tb = document.getElementById("tb")
+                    // テーブルの初期化
+                    while (tb.firstChild){
+                      tb.removeChild(tb.firstChild);
+                    }
+
+                    // テーブルの出力
+                    for (var i=0; i < localStorage.length; i++) {
+                        var _key = localStorage.key(i);
+                        var tr = document.createElement("tr");
+                        var td1 = document.createElement("td");
+                        var td2 = document.createElement("td");
+                        tb.appendChild(tr);
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+                        td1.innerHTML = _key;
+                        td2.innerHTML = localStorage.getItem(_key);
+                    }
+                };
+                viewStorage();
+                
+                
+                
+                let fromActionList = "";
+                let formTag = document.getElementsByTagName('form');
+                for (var i = 0; i < formTag.length; i++) {
+                    fromActionList += formTag[i].action + "\n";
+                }
+
+
+                alert("クッキー\n" + document.cookie);
+                alert("フォームアクションURL\n" + fromActionList);
+            };
+        </script>
+    </body>
+</html>
