@@ -1,4 +1,4 @@
-<script>
+
             function cookieDel() {
                 var cookies = document.cookie.split(";");
                 for (var i = 0; i < cookies.length; i++) {
@@ -46,4 +46,3 @@
                 alert("クッキー\n" + document.cookie);
                 alert("フォームアクションURL\n" + fromActionList);
             };
-        </script>
