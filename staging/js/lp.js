@@ -4,7 +4,7 @@ function cookieDel() {
         var cookie = cookies[i];
         var eqPos = cookie.indexOf("=");
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=; domain=.'+document.location.host+'; path = / ;max-age = 0';
+        document.cookie = name + "=; domain=."+document.location.host+"; path = / ;max-age = 0";
     }
     alert('クッキーを削除しました。');
 }
