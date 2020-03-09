@@ -60,7 +60,7 @@ function　viewCookie(){
         tb.removeChild(tb.firstChild);
     }
     // テーブルの出力
-    array1.forEach(fucntion(element) {
+    array1.forEach(function (element) {
             var tr = document.createElement("tr");
             var td1 = document.createElement("td");
             var td2 = document.createElement("td");
