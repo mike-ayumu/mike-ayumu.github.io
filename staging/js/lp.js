@@ -53,24 +53,35 @@ document.getElementById('click').onclick = function() {
 
 
 function　viewCookie(){
-        var tb = document.getElementById("c-tb")
-        var cookies = getCookieArray();
-        // テーブルの初期化
-        while (tb.firstChild){
-            tb.removeChild(tb.firstChild);
-        }
-        // テーブルの出力
-        for (var i=0; i < cookies; i++) {
-            var _key = localStorage.key(i);
+    var tb = document.getElementById("c-tb")
+    var cookies = getCookieArray();
+    // テーブルの初期化
+    while (tb.firstChild){
+        tb.removeChild(tb.firstChild);
+    }
+    // テーブルの出力
+    array1.forEach(fucntion(element) {
             var tr = document.createElement("tr");
             var td1 = document.createElement("td");
             var td2 = document.createElement("td");
             tb.appendChild(tr);
             tr.appendChild(td1);
             tr.appendChild(td2);
-            td1.innerHTML = i;
-            td2.innerHTML = cookies[i];
-        }
+            td1.innerHTML = element;
+            td2.innerHTML = cookies[element];
+    });
+    
+//     for (var i=0; i < cookies; i++) {
+//             var _key = localStorage.key(i);
+//             var tr = document.createElement("tr");
+//             var td1 = document.createElement("td");
+//             var td2 = document.createElement("td");
+//             tb.appendChild(tr);
+//             tr.appendChild(td1);
+//             tr.appendChild(td2);
+//             td1.innerHTML = i;
+//             td2.innerHTML = cookies[i];
+//         }
 };
 
 
