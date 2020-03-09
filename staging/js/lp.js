@@ -15,26 +15,6 @@ function localStorageDel() {
 }
 
 document.getElementById('click').onclick = function() {
-    // ローカルストレージのデータを表に出力
-    var viewStorage = function(){
-        var tb = document.getElementById("tb")
-        // テーブルの初期化
-        while (tb.firstChild){
-            tb.removeChild(tb.firstChild);
-        }
-        // テーブルの出力
-        for (var i=0; i < localStorage.length; i++) {
-            var _key = localStorage.key(i);
-            var tr = document.createElement("tr");
-            var td1 = document.createElement("td");
-            var td2 = document.createElement("td");
-            tb.appendChild(tr);
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            td1.innerHTML = _key;
-            td2.innerHTML = localStorage.getItem(_key);
-        }
-    };
     viewStorage();
     viewCookie();
     
@@ -49,9 +29,28 @@ document.getElementById('click').onclick = function() {
 };
 
 
+// ローカルストレージのデータを表に出力
+function viewStorage(){
+    var tb = document.getElementById("tb")
+    // テーブルの初期化
+    while (tb.firstChild){
+        tb.removeChild(tb.firstChild);
+    }
+    // テーブルの出力
+    for (var i=0; i < localStorage.length; i++) {
+        var _key = localStorage.key(i);
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        tb.appendChild(tr);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        td1.innerHTML = _key;
+        td2.innerHTML = localStorage.getItem(_key);
+    }
+};
 
-
-
+// クッキーのデータを表に出力
 function viewCookie() {
     var tb = document.getElementById("c-tb")
     var cookies = getCookieArray();
@@ -70,18 +69,6 @@ function viewCookie() {
         td1.innerHTML = e;
         td2.innerHTML = cookies[e];
     })
-    
-//     for (var i=0; i < cookies; i++) {
-//             var _key = localStorage.key(i);
-//             var tr = document.createElement("tr");
-//             var td1 = document.createElement("td");
-//             var td2 = document.createElement("td");
-//             tb.appendChild(tr);
-//             tr.appendChild(td1);
-//             tr.appendChild(td2);
-//             td1.innerHTML = i;
-//             td2.innerHTML = cookies[i];
-//         }
 };
 
 
