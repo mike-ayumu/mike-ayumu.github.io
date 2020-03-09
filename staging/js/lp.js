@@ -52,7 +52,7 @@ document.getElementById('click').onclick = function() {
 
 
 
-function　viewCookie(){
+function viewCookie() {
     var tb = document.getElementById("c-tb")
     var cookies = getCookieArray();
     // テーブルの初期化
@@ -60,16 +60,16 @@ function　viewCookie(){
         tb.removeChild(tb.firstChild);
     }
     // テーブルの出力
-    array1.forEach(function (element) {
-            var tr = document.createElement("tr");
-            var td1 = document.createElement("td");
-            var td2 = document.createElement("td");
-            tb.appendChild(tr);
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            td1.innerHTML = element;
-            td2.innerHTML = cookies[element];
-    });
+    Object.keys(cookies).forEach(e => {
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        tb.appendChild(tr);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        td1.innerHTML = e;
+        td2.innerHTML = cookies[e];
+    })
     
 //     for (var i=0; i < cookies; i++) {
 //             var _key = localStorage.key(i);
