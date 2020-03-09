@@ -46,7 +46,7 @@ function viewCookie() {
         tb.removeChild(tb.firstChild);
     }
     // テーブルの出力
-    Object.keys(cookies).forEach(e => {
+    Object.keys(cookies).forEach(function (e) {
         var tr = document.createElement("tr");
         var td1 = document.createElement("td");
         var td2 = document.createElement("td");
