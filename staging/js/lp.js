@@ -1,19 +1,9 @@
-function cookieDel() {
-    var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=; domain=."+document.location.host+"; path = / ;max-age = 0";
-    }
-    alert('クッキーを削除しました。');
-}
-
-function localStorageDel() {
-    window.localStorage&&window.localStorage.clear()
-    alert('ローカルストレージを削除しました。');
-}
-
+/**
+ *
+ * --- 表示 ---
+ *
+*/
+// 表示ボタン押下
 document.getElementById('click').onclick = function() {
     viewStorage();
     viewCookie();
@@ -23,11 +13,8 @@ document.getElementById('click').onclick = function() {
     for (var i = 0; i < formTag.length; i++) {
         fromActionList += formTag[i].action + "\n";
     }
-    
-    alert("クッキー\n" + document.cookie);
     alert("フォームアクションURL\n" + fromActionList);
 };
-
 
 // ローカルストレージのデータを表に出力
 function viewStorage(){
@@ -71,7 +58,6 @@ function viewCookie() {
     })
 };
 
-
 //cookie値を連想配列として取得する
 function getCookieArray(){
     var arr = new Array();
@@ -83,4 +69,27 @@ function getCookieArray(){
         }
     }
     return arr;
+}
+
+
+
+/**
+ *
+ * --- 削除 ---
+ *
+*/
+function cookieDel() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=; domain=."+document.location.host+"; path = / ;max-age = 0";
+    }
+    alert('クッキーを削除しました。');
+}
+
+function localStorageDel() {
+    window.localStorage&&window.localStorage.clear()
+    alert('ローカルストレージを削除しました。');
 }
