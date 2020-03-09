@@ -77,14 +77,25 @@
         
         
         
-        <h3 id="click">ローカルストレージ確認（ここをクリックして表示）</h3>
-        <table>
+        <button id="click">クッキー＆ローカルストレージを確認する</button>
+            
+        <table class="cookie">
+            <caption>クッキー</caption>
             <tr>
                 <th>キー</th>
                 <th>値</th>
             </tr>
-            <tbody id="tb">
-            </tbody>
+            <tbody id="c-tb"></tbody>
+        </table>
+            
+            
+        <table class="local">
+            <caption>ローカルストレージ</caption>
+            <tr>
+                <th>キー</th>
+                <th>値</th>
+            </tr>
+            <tbody id="tb"></tbody>
         </table>
             
         <hr>
