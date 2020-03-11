@@ -27,7 +27,7 @@ function viewStorage(){
     for (var i=0; i < localStorage.length; i++) {
         var _key = localStorage.key(i);
         var tr = document.createElement("tr");
-        var td1 = document.createElement("td");
+        var td1 = document.createElement("th");
         var td2 = document.createElement("td");
         tb.appendChild(tr);
         tr.appendChild(td1);
@@ -48,7 +48,7 @@ function viewCookie() {
     // テーブルの出力
     Object.keys(cookies).forEach(function (e) {
         var tr = document.createElement("tr");
-        var td1 = document.createElement("td");
+        var td1 = document.createElement("th");
         var td2 = document.createElement("td");
         tb.appendChild(tr);
         tr.appendChild(td1);
