@@ -1,0 +1,257 @@
+/* 共通項目 */
+* {
+    box-sizing: border-box;
+}
+.section_inner {
+    width: 100%;
+    height: 100vh;
+}
+.section_title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #384672;
+}
+::selection {
+    background:#384672;
+    color: #fff;
+}
+::-moz-selection {
+    background:#384672;
+    color: #fff;
+}
+/* TOP */
+.top_section {
+    position: relative;
+    border-bottom: 4px solid #384672;
+    background-image: url("/img/top.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.top_content_inner {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    width: 270px;
+}
+.logo {
+    margin: auto;
+    width: 150px;
+}
+.logo img {
+    width: 100%;
+}
+.top_concept_text {
+    margin-top: 10px;
+    text-align: center;
+    line-height: 2.5;
+}
+/* ITEM LIST */
+.item_list_box {
+    display: flex;
+    padding: 30px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.item_main_image {
+    width: 50%;
+    background-image: url("/img/key.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.item_list_inner {
+    width: 46%;
+    margin-left: 4%;
+}
+.item_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item_list li {
+    width: 44%;
+    margin-right: 6%;
+    margin-bottom: 6%;
+}
+.item_list li a {
+    color: #000;
+    text-decoration: none;
+}
+.item_list li:nth-child(2n) {
+    margin-right: 0;
+}
+.item_list_img {
+    display: block;
+}
+.item_list_img img {
+    width: 100%;
+}
+.item_list_text {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 12px;
+}
+.contact_section {
+    background-image: url("/img/letter.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.contact_inner {
+    padding: 60px 20px;
+    position: relative;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.contact_form_box {
+    margin: auto;
+    width: 600px;
+    height: 540px;
+}
+.contact_list {
+    margin-bottom: 30px;
+}
+.contact_list.confirm {
+    display: flex;
+}
+.contact_list dt {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #707070;
+}
+.contact_list.confirm  dt {
+    width: 120px;
+}
+.contact_list.confirm  dd {
+    flex: 1;
+}
+
+.contact_list dd input[type="text"],
+.contact_list dd input[type="mail"],
+.contact_list dd textarea {
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 16px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 1px 1px 8px rgba(150, 150, 150, 0.6);
+}
+input::placeholder,
+textarea::placeholder {
+    color: #bbb;
+}
+.contact_button {
+    margin-top: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.contact_button button,
+.contact_button a {
+    display: block;
+    width: 50%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.contact_button button {
+    color: #fff;
+    background-color: #384672;
+    border: 1px solid #384672;
+}
+.contact_button a {
+    margin-right: 30px;
+    background-color: #fff;
+    color: #384672;
+    border: 1px solid #384672;
+    text-decoration: none;
+}
+.contact_button.compleat a {
+    margin-right: 0;
+}
+.compleat_text {
+    margin: 55px 0 120px;
+    line-height: 2;
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+/* footer */
+.footer {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-top: 4px solid #384672;
+}
+.footer small {
+    font-size: 14px;
+}
+
+/* Pager */
+.pager {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+}
+.pager li a {
+    display: block;
+    margin-bottom: 30px;
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #888;
+}
+.pager li.is-current a {
+    background-color: #888;
+}
+
+/* SP対応 */
+@media only screen and (max-width: 767px) {
+    .top_content_inner {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: 310px;
+    }
+    .section_title {
+        margin-top: 30px;
+    }
+    .contact_form_box {
+        width: 100%;
+    }
+    .item_list_box {
+        padding: 20px;
+        flex-direction: column;
+    }
+    .item_main_image,
+    .item_list_inner {
+        margin: 0;
+        width: 100%;
+    }
+    .item_main_image {
+        height: 200px;
+    }
+    .contact_inner {
+        padding: 20px;
+    }
+    .contact_list.confirm {
+        display: block;
+    }
+    .contact_list dd {
+        width: 100%;
+    }
+    .contact_button button {
+        width: 100%;
+    }
+    .pager {
+        display: none;
+    }
+}
