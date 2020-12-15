@@ -1242,4 +1242,38 @@ document.body.appendChild(a);
 </script>
 -->
     </body>
+			
+			<a href="#" class="pagetop"><span><i class="fa fa-angle-up"></i></span></a>
+  <script src="https://apis.google.com/js/platform.js" async defer>
+    {lang: 'ja'}
+  </script><script type='text/javascript' src='https://marintime.co/wp-content/plugins/twenty20/assets/js/jquery.twenty20.js?ver=1.55'></script>
+<script type='text/javascript' src='https://marintime.co/wp-content/plugins/twenty20/assets/js/jquery.event.move.js?ver=1.55'></script>
+<script type='text/javascript' src='https://marintime.co/wp-content/themes/xeory_base/lib/js/jquery.pagetop.js?ver=5.4.4'></script>
+<script type='text/javascript' src='https://marintime.co/wp-content/themes/xeory_base/lib/js/jquery.table-scroll.js?ver=5.4.4'></script>
+<script type='text/javascript' src='https://marintime.co/wp-includes/js/wp-embed.min.js?ver=5.4.4'></script>
+<script>
+(function($){
+
+$(function(){
+    $(".sub-menu").css('display', 'none');
+  $("#gnav-ul li").hover(function(){
+    $(this).children('ul').fadeIn('fast');
+  }, function(){
+    $(this).children('ul').fadeOut('fast');
+  });
+    // スマホトグルメニュー
+  
+      $('#gnav').addClass('active');
+    
+  
+  $('#header-menu-tog a').click(function(){
+    $('#gnav').toggleClass('active');
+  });
+});
+
+
+})(jQuery);
+
+</script>
+
 </html>
