@@ -40,11 +40,13 @@
                 var catsPoint="test";
                 var amount="111";
                 var uqid="9baz9728959157I1";
+                var trackingUserId="";
+                var firstCookie=document.cookie;
 
                 var a=document.createElement("script");
                 a.src="//act.dev-cats.ademo.jp/ac/9baz9728959157I1/action.js";
                 a.id="ac_9baz9728959157I1"; 
-                a.addEventListener("load",function(){CATS_GroupAction(gid, aaaaaa, bbbbbb, cccccc, uqid, san, uid4, uid5, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, nana, hachi, catsPoint, amount);});
+                a.addEventListener("load",function(){CATS_GroupAction(gid, aaaaaa, bbbbbb, cccccc, uqid, san, uid4, uid5, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, nana, hachi, catsPoint, amount, trackingUserId, firstCookie);});
                 document.body.appendChild(a);
             })();
         </script>
