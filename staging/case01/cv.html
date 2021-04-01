@@ -42,7 +42,16 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '461452318208302');
-//         fbq('track', 'PageView');
+            
+        var catsTrackingUserKey = "CATS_M_U_C_85B1ec5cc6d1074e_4";
+	    var cookiesArray		= document.cookie.split(';');
+	    var event_id			= "";
+        cookiesArray.map(function(cookie) {
+            var ca = cookie.split('=');
+            if(ca[0].trim() == catsTrackingUserKey) { event_id = ca[1]; }
+        })
+        console.log(event_id);
+        fbq('track', 'PageView', {eventID: event_id});
         </script>
         <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=461452318208302&ev=PageView&noscript=1"
