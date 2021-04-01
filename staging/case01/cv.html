@@ -44,9 +44,8 @@
         fbq('init', '461452318208302');
             
         var catsTrackingUserKey = "CATS_M_U_C_9baz9728959157I1_134";
-	    var cookiesArray		= document.cookie.split(';');
-	    var event_id			= "";
-        cookiesArray.map(function(cookie) {
+	var event_id			= "";
+        document.cookie.split(';').map(function(cookie) {
             var ca = cookie.split('=');
             if(ca[0].trim() == catsTrackingUserKey) { event_id = ca[1]; }
         })
