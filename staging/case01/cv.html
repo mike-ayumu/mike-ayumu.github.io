@@ -47,7 +47,7 @@
 	var event_id			= "";
         document.cookie.split(';').map(function(cookie) {
             var ca = cookie.split('=');
-            if(ca[0].trim() == catsTrackingUserKey) { event_id = ca[1]; }
+            if(ca[0].trim() === catsTrackingUserKey) { event_id = ca[1]; }
         })
         console.log(event_id);
         fbq('track', 'PageView', {eventID: event_id});
