@@ -31,6 +31,15 @@
 //         fbq('track', 'PageView');
         fbq('track', 'Purchase', {value: 0, currency: 'jpy'});
 //         fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
+            
+            
+            var catsTrackingUserKey = "CATS_M_U_C_85B1ec5cc6d1074e_123";
+            var event_id            = "";
+            document.cookie.split(';').map(function(cookie) {
+                var ca = cookie.split('=');
+                if(ca[0].trim() == catsTrackingUserKey) { event_id = ca[1]; }
+            })
+            fbq('track', 'Purchase', {value: 10, currency: 'jpy'}, {eventID: event_id});
         </script>
         <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=461452318208302&ev=PageView&noscript=1"
