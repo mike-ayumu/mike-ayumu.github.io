@@ -54,10 +54,14 @@
         <script>
             (function(){
                 var can_organic_search="off";
+                var can_chatbot="off";
+                var cats_options = {
+                    api_parameter_inheritance : 'On',
+                };
                 var a=document.createElement("script");
                 a.src="//act.pro-cats.ademo.jp/ck/785Nb9Ecf17a3E71/cookie.js";
                 a.id="ck_785Nb9Ecf17a3E71"; 
-                a.addEventListener("load",function(){CATS_Create(38,"785Nb9Ecf17a3E71", can_organic_search);});
+                a.addEventListener("load",function(){CATS_Create(38,"785Nb9Ecf17a3E71", can_organic_search, can_chatbot, cats_options);});
                 document.body.appendChild(a);
             })();
         </script>
