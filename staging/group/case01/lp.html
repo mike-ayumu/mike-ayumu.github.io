@@ -69,10 +69,14 @@
         (function(){
         var organic_cid="152";
         var can_organic_search="off";
+        var can_chatbot="off";
+	    var cats_options = {
+		    api_parameter_inheritance : 'on',
+	    };
         var a=document.createElement("script");
         a.src="//cname.dev-cats.ademo.jp/ck/9baz9728959157I1/cookie.js";
         a.id="ck_9baz9728959157I1"; 
-        a.addEventListener("load",function(){CATS_GroupCreate(73,"9baz9728959157I1", organic_cid, can_organic_search);});
+        a.addEventListener("load",function(){CATS_GroupCreate(73,"9baz9728959157I1", organic_cid, can_organic_search, can_chatbot, cats_options);});
         document.body.appendChild(a);
         })();
         </script>
