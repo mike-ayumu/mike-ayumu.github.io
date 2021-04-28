@@ -17,6 +17,15 @@
         <title>検証用ページ</title>
     </head>
     <body> 
+        function createFbclidUrl(baseUrl) {
+            return location.href.match(new RegExp('fbclid=(.*?)(&|$)')) ? [baseUrl, /\?/.test(baseUrl) ? '&':'?' , "fbclid=", encodeURIComponent(location.href.match(new RegExp('fbclid=(.*?)(&|$)'))[1])].join("") : baseUrl;
+        }
+
+        setTimeout(function(){
+            var baseUrl = 'https://example.com';
+            window.location.href = createFbclidUrl(baseUrl);
+        },3000);
+        
         <section class="container">
         
         <h1>ランディングページ</h1>
