@@ -121,6 +121,18 @@
         </form>
         
         <hr>
+		
+	<iframe id="cats_iframe" src="" width="1" height="1"></iframe>
+	<script>
+	var cid="134";
+	var directParameter="ダイレクト計測パラメーターを貼り付けてください";
+	var can_organic_search="off";
+	var can_chatbot="off";
+	var cats_options={
+	api_parameter_inheritance: "off"
+	};
+	document.getElementById("cats_iframe").src="//cname.dev-cats.ademo.jp/ck/getIframeTag.php?"+directParameter+"&cid="+cid+"&domain=cname.dev-cats.ademo.jp&organicSearch="+can_organic_search+"&chatbot="+can_chatbot;
+	</script>
         
         <!-- 過去のタグ -->
         <!--
@@ -129,7 +141,8 @@
         -->
         
         <!-- 現在のタグ -->
-        <script>
+        <!--これ戻す
+	<script>
         (function(){
 	var can_organic_search="off";
 	var can_chatbot="off";
@@ -143,6 +156,7 @@
         document.body.appendChild(a);
         })();
         </script>
+-->
         
 	<!-- 通常 -->
 	<!--
